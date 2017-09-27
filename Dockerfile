@@ -45,7 +45,7 @@ RUN apt-get -y upgrade bazel
 RUN apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN cd /root && git clone --verbose https://github.com/timediv/tensorflow-with-kenlm.git tensorflow
+RUN cd /root && git clone -b bugfix/kenlm-new-version --verbose https://github.com/timediv/tensorflow-with-kenlm.git tensorflow
 SHELL ["/bin/bash", "-c"]
 RUN chmod +x /root/tensorflow/configure
 
